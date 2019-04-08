@@ -1,21 +1,41 @@
-<!DOCTYPE HTML>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css" type="text/css">
-		<title>Template</title>
-	</head>
-
-	<body>
-	
+<!doctype html>
+   <html lang="en-us">
+      <head>
+        <meta charset="utf-8">
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+       <title>js-dos api</title>
+       <style type="text/css">
+         .dosbox-container { width: 640px; height: 400px; }
+       </style>
+    </head>
+    <body>
 		<h1>Topic 3</h1>
 	
 		<div id="information">
 		
-			<h1>Topic........:</h1>
+			<h1>MS-DOS</h1>
 			
-			<h2>Insert sub-header here.</h2>
-			<p>Insert main content here.</p>			
-		</div>
-	</body>
-</html>
+			<h2>Graphics</h2>
+			<p>Below is Digger running in DosBos. As you can see there is a very limited number of colours, mostly narrowed down to hot pink, teal and plain old fashioned white. This means people had to be creative and this lead to very unqiue looking games.</p>
+		
+		<body style="background-color: rgb(30,34,39); color: #fff;">
+        <div id="dosbox"></div>
+        <br/>
+        <button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
+      
+        <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+        <script type="text/javascript">
+        var dosbox = new Dosbox({
+          id: "dosbox",
+		  
+		  onload: function (dosbox) {
+             dosbox.run("https://js-dos.com/cdn/digger.zip", "./DIGGER.COM");
+           },
+          
+          onrun: function (dosbox, app) {
+             console.log("App '" + app + "' is runned");
+           }
+         });
+         </script>
+28     </body>
+29   </html>
